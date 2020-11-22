@@ -1,0 +1,51 @@
+#
+# Copyright (c) 2020 Darlexlin <***>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/darlexlin/docker-seafile-cli
+# Description: Build Docker for seafile-cli
+#
+
+name: Seafile Client For Command Only
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Input the tag'
+        required: true
+
+env:
+  IMAGE_TAG: 7.0.10
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build image
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: ./Dockerfile
+        platforms: linux/amd64
+        push: true
+        tags: |
+          darlexlin/seafile-client:latest
+          darlexlin/seafile-client:v$IMAGE_TAG
+      
