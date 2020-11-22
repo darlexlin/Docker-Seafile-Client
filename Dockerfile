@@ -1,19 +1,17 @@
-FROM phusion/baseimage:focal-1.0.0alpha1-amd64
+FROM phusion/baseimage:18.04-1.0.0-amd64
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV PUID=1000 PGID=1000
+ENV TZ Asia/Shanghai
 
-#COPY sources.list /etc/apt
+COPY sources.list /etc/apt
 
 RUN apt-get update -y && \
     apt-get install -y wget tzdata && \
     wget https://linux-clients.seafile.com/seafile.asc -O /usr/share/keyrings/seafile-keyring.asc && \
-    bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/focal/ stable main' > /etc/apt/sources.list.d/seafile.list"  && \
-    apt-get update -y
-    
-ENV TZ Asia/Shanghai
-
-RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/bionic/ stable main' > /etc/apt/sources.list.d/seafile.list" && \
+    apt-get update -y && \
+    ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && \
     apt-get install -y seafile-cli && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     apt-get clean
