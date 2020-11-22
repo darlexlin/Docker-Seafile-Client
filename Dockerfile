@@ -2,7 +2,6 @@ FROM phusion/baseimage:18.04-1.0.0-amd64
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV PUID=1000 PGID=100
-ENV TZ Asia/Shanghai
 
 #COPY sources.list /etc/apt
 
@@ -15,6 +14,8 @@ RUN apt-get update -y && \
     apt-get install -y seafile-cli && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     apt-get clean
+
+ENV TZ Asia/Shanghai
 
 WORKDIR /sf
 
