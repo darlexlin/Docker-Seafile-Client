@@ -18,7 +18,7 @@ on:
         required: true
 
 env:
-  TAG: 7.0.10
+#  TAG: 7.0.10
   TZ: Asia/Shanghai
 
 jobs:
@@ -47,4 +47,4 @@ jobs:
         push: true
         tags: |
           darlexlin/seafile-client:latest
-          darlexlin/seafile-client:{TAG}
+          darlexlin/seafile-client:7.0.10
