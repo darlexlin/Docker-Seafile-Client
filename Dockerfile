@@ -1,7 +1,7 @@
 FROM phusion/baseimage:focal-1.0.0alpha1-amd64
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV PUID=1000 PGID=100
+ENV PUID=1000 PGID=1000
 
 #COPY sources.list /etc/apt
 
