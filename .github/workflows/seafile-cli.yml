@@ -47,4 +47,4 @@ jobs:
         push: true
         tags: |
           darlexlin/seafile-client:latest
-          darlexlin/seafile-client:${TAG}
+          darlexlin/seafile-client:{TAG}
