@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PUID=1000 PGID=100
 ENV TZ Asia/Shanghai
 
-COPY sources.list /etc/apt
+#COPY sources.list /etc/apt
 
 RUN apt-get update -y && \
     apt-get install -y wget tzdata && \
