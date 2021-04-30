@@ -1,10 +1,10 @@
-FROM phusion/baseimage:18.04-1.0.0-amd64
+FROM ghcr.io/linuxserver/baseimage-alpine:3.13
 
-ENV DEBIAN_FRONTEND noninteractive
+# 环境变量
 ENV PUID=1000 PGID=1000
 ENV TZ Asia/Shanghai
 
-COPY sources.list /etc/apt
+# COPY sources.list /etc/apt
 
 RUN apt-get update -y && \
     apt-get install -y wget tzdata && \
