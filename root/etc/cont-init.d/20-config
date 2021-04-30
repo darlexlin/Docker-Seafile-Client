@@ -5,7 +5,7 @@
 #	/config
 
 # 映射配置目录
-	ln -s /config/ccnet /root/.ccnet
+	ln -s /root/.ccnet /config/ccnet
 
 # 授权
 	chown -R abc:abc \
