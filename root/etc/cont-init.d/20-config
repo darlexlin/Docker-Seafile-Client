@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# 创建文件夹
+	mkdir -p \
+	/config/{ccnet,seafile,seafile-data}
+
+#初始化seafile
+seaf-cli init -d /config -c /config/ccnet
+
+# permissions
+chown -R abc:abc \
+	/config
+chmod -R g+w \
+	/config
