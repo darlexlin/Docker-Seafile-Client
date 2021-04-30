@@ -3,6 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-ubuntu:focal
 # 环境变量
 ENV PUID PGID
 ENV TZ Asia/Shanghai
+ENV HOST
 
 # 安装seafile的cli客户端
 RUN	apt update && \
@@ -15,7 +16,12 @@ RUN	apt update && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 		apt clean
 
-WORKDIR /config
+# 初始化
+RUN seaf-cli init -d /
+
+# 数据目录
+WORKDIR /seafile-data
+VOLUME /$HOST /seafile-data
 
 #添加本地文件
 COPY root/ /
