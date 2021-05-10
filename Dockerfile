@@ -22,11 +22,11 @@ RUN seaf-cli init -d / && \
 # 数据目录
 WORKDIR /seafile-data
 
-#添加本地文件
+# 添加本地文件
 #COPY root/ /
 COPY start.sh /config/start.sh
 
 RUN chmod +x /config/start.sh
 
-启动Seafile
+# 启动Seafile
 CMD ["/config/start.sh"]
