@@ -24,7 +24,6 @@ RUN seaf-cli init -d / && \
 WORKDIR /seafile-data
 
 # 添加本地文件
-#COPY root/ /
 COPY start.sh /config/start.sh
 
 RUN chmod +x /config/start.sh
