@@ -1,15 +1,16 @@
-FROM phusion/baseimage:focal-1.0.0
+FROM ghcr.io/linuxserver/baseimage-ubuntu:bionic
 
 # 环境变量
-ENV PUID PGID
+ENV DEBIAN_FRONTEND noninteractive
+ENV PUID=1000 PGID=100
 ENV TZ Asia/Shanghai
 
 # 安装seafile的cli客户端
-RUN	apt update && \
+RUN	apt update -y && \
 		apt install -y wget tzdata && \
 		wget https://linux-clients.seafile.com/seafile.asc -O /usr/share/keyrings/seafile-keyring.asc && \
-		bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/focal/ stable main' > /etc/apt/sources.list.d/seafile.list" && \
-		apt update && \
+		bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/bionic/ stable main' > /etc/apt/sources.list.d/seafile.list" && \
+		apt update -y && \
 		apt install -y seafile-cli && \
 		ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
