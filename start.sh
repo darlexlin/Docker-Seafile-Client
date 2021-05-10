@@ -1,5 +1,5 @@
 #!/bin/bash
-/usr/bin/data
+/bin/data
 /usr/bin/seaf-cli start
 echo "--- seafile started ---"
 tail -f /dev/null
