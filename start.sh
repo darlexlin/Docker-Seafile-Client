@@ -1,5 +1,9 @@
 #!/bin/bash
-echo “$(date)”
+echo "-------------------------------------"
+echo "                                     "
+echo “TIME：$(date)”
+echo "                                     "
 /usr/bin/seaf-cli start
-echo "--- seafile started ---"
+echo "                                     "
+echo "--------   seafile started   --------"
 tail -f /dev/null
