@@ -16,8 +16,7 @@ RUN	apt update && \
 		apt clean
 
 # 初始化
-RUN seaf-cli init -d /
-		&& \
+RUN seaf-cli init -d / && \
 		ln -s /root/.ccnet /config/ccnet
 
 # 数据目录
