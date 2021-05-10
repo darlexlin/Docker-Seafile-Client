@@ -17,17 +17,17 @@ RUN	apt update && \
 
 # 初始化
 RUN seaf-cli init -d /
-#		&& \
-#		ln -s /root/.ccnet /config/ccnet
+		&& \
+		ln -s /root/.ccnet /config/ccnet
 
 # 数据目录
 WORKDIR /seafile-data
 
 #添加本地文件
-COPY root/ /
-#COPY start.sh /config/start.sh
+#COPY root/ /
+COPY start.sh /config/start.sh
 
-#RUN chmod +x /config/start.sh
+RUN chmod +x /config/start.sh
 
-#启动Seafile
-#CMD ["/config/start.sh"]
+启动Seafile
+CMD ["/config/start.sh"]
