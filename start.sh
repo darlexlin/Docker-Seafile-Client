@@ -1,3 +1,3 @@
 #!/bin/bash
 /usr/bin/seaf-cli start
-/bin/bash/data
+/bin/data

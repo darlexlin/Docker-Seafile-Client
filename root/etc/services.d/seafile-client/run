@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 
 exec /usr/bin/seaf-cli start
-exec /bin/bash/data
+exec /bin/data
