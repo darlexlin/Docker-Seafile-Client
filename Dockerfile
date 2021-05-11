@@ -25,6 +25,7 @@ WORKDIR /sf
 
 # 添加本地文件
 # COPY start.sh /app/start.sh
+COPY root/ /
 
 # RUN chmod +x /app/start.sh
 
