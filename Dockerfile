@@ -7,7 +7,7 @@ ENV TZ Asia/Shanghai
 
 # 安装seafile的cli客户端
 RUN	apt update -y && \
-#		apt install -y wget tzdata && \
+		apt install -y wget tzdata && \
 		wget https://linux-clients.seafile.com/seafile.asc -O /usr/share/keyrings/seafile-keyring.asc && \
 		bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/bionic/ stable main' > /etc/apt/sources.list.d/seafile.list" && \
 		apt update -y && \
