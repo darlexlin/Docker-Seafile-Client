@@ -2,7 +2,7 @@
 
 ## 镜像内容
 
-此镜像引用自：linuxserver/baseimage-ubuntu
+此镜像引用自：linuxserver/baseimage-ubuntu:bionic
 
 ## 参数设置
 
