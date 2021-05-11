@@ -1,12 +1,9 @@
 FROM ghcr.io/linuxserver/baseimage-ubuntu:bionic
 
 # 环境变量
-ENV DEBIAN_FRONTEND noninteractive
+# ENV DEBIAN_FRONTEND noninteractive
 ENV PUID PGID
 ENV TZ Asia/Shanghai
-
-# 更改用户
-USER abc
 
 # 安装seafile的cli客户端
 RUN	apt update -y && \
@@ -20,16 +17,19 @@ RUN	apt update -y && \
 		apt clean
 
 # 初始化
-RUN seaf-cli init -d /app
-#		ln -s /root/.ccnet /config/ccnet
+RUN seaf-cli init -d /app -c /app
+#		ln -s /root/.ccnet /app/ccnet
 
 # 数据目录
-WORKDIR /config
+WORKDIR /sf
 
 # 添加本地文件
-COPY start.sh /app/start.sh
+# COPY start.sh /app/start.sh
 
-RUN chmod +x /app/start.sh
+# RUN chmod +x /app/start.sh
+
+# 更改用户
+# USER abc
 
 # 启动Seafile
-CMD ["/app/start.sh"]
+# CMD ["/app/start.sh"]

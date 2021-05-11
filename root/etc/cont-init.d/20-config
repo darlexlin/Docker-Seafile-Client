@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+
+# 配置权限，sf为数据目录，app为配置目录
+chown -R abc:abc \
+	/sf \
+	/app
+chmod -R g+w \
+	/sf \
+	/app
