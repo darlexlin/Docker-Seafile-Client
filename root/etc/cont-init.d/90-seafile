@@ -2,6 +2,8 @@
 
 # 映射配置目录
  ln -s /app/ccnet /root/.ccnet
- 
+
+# 更改用户
+ su abc
 # 启动软件
  /usr/bin/seaf-cli start

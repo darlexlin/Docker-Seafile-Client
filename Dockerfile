@@ -26,7 +26,7 @@ WORKDIR /sf
 COPY root/ /
 
 # 更改用户
-USER abc
+# USER abc
 
 # 启动Seafile
 # CMD ["/app/start.sh"]
