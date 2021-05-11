@@ -2,12 +2,15 @@ FROM ghcr.io/linuxserver/baseimage-ubuntu:bionic
 
 # 环境变量
 ENV DEBIAN_FRONTEND noninteractive
-ENV PUID=1000 PGID=100
+ENV PUID PGID
 ENV TZ Asia/Shanghai
+
+# 更改用户
+USER abc
 
 # 安装seafile的cli客户端
 RUN	apt update -y && \
-		apt install -y wget tzdata && \
+#		apt install -y wget tzdata && \
 		wget https://linux-clients.seafile.com/seafile.asc -O /usr/share/keyrings/seafile-keyring.asc && \
 		bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/seafile-keyring.asc] https://linux-clients.seafile.com/seafile-deb/bionic/ stable main' > /etc/apt/sources.list.d/seafile.list" && \
 		apt update -y && \
@@ -17,16 +20,16 @@ RUN	apt update -y && \
 		apt clean
 
 # 初始化
-RUN seaf-cli init -d / && \
-		ln -s /root/.ccnet /config/ccnet
+RUN seaf-cli init -d /app
+#		ln -s /root/.ccnet /config/ccnet
 
 # 数据目录
-WORKDIR /seafile-data
+WORKDIR /config
 
 # 添加本地文件
-COPY start.sh /config/start.sh
+COPY start.sh /app/start.sh
 
-RUN chmod +x /config/start.sh
+RUN chmod +x /app/start.sh
 
 # 启动Seafile
-CMD ["/config/start.sh"]
+CMD ["/app/start.sh"]
