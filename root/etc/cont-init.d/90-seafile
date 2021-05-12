@@ -15,7 +15,7 @@ echo "-------------------------------------"
 
 # 启动软件
 echo "                                     "
-/usr/bin/seaf-cli start
+runuser -u abc -g abc /usr/bin/seaf-cli start
 echo "                                     "
 echo "-------------------------------------"
 echo "                                     "
