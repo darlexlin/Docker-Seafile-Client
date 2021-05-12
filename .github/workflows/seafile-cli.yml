@@ -15,7 +15,7 @@ on:
     inputs:
       tag:
         description: 'Input the tag'
-#        required: true
+        required: true
 
 env:
 #  TAG: 7.0.10
