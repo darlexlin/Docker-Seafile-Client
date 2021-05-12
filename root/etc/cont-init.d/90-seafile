@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 # 映射配置目录
- ln -s /app/ccnet /root/.ccnet
+ ln -s /app/ccnet /config/.ccnet
 
 # 更改用户
 # su abc
