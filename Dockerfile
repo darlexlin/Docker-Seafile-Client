@@ -27,4 +27,4 @@ COPY root/ /
 
 # 更改用户及授权
 USER abc
-RUN usermod -g root abc
+RUN usermod -a -G root abc
