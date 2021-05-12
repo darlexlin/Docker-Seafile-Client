@@ -16,7 +16,7 @@ RUN	apt update -y && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 		apt clean
 
-# 初始化
+# 初始化seafile
 RUN seaf-cli init -d /app -c /app/ccnet
 
 # 数据目录
@@ -26,7 +26,4 @@ WORKDIR /sf
 COPY root/ /
 
 # 更改用户
-# USER abc
-
-# 启动Seafile
-# CMD ["/app/start.sh"]
+USER abc

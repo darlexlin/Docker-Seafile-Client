@@ -4,6 +4,21 @@
  ln -s /app/ccnet /root/.ccnet
 
 # 更改用户
- su abc
+# su abc
+
+# 输出当前时间
+echo "-------------------------------------"
+echo "                                     "
+echo “TIME：$(date)”
+echo "                                     "
+echo "-------------------------------------"
+
 # 启动软件
- /usr/bin/seaf-cli start
+echo "                                     "
+/usr/bin/seaf-cli start
+echo "                                     "
+echo "-------------------------------------"
+echo "                                     "
+echo "seafile started                      "
+echo "                                     "
+echo "-------------------------------------"
