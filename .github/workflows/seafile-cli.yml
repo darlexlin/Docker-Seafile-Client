@@ -8,7 +8,7 @@
 # Description: Build Docker for seafile-cli
 #
 
-name: Seafile Client For Command Only
+name: Seafile Cli
 
 on:
   workflow_dispatch:
@@ -18,7 +18,6 @@ on:
         required: true
 
 env:
-#  TAG: 7.0.10
   TZ: Asia/Shanghai
 
 jobs:

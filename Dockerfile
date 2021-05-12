@@ -24,7 +24,3 @@ WORKDIR /sf
 
 # 添加本地文件
 COPY root/ /
-
-# 更改用户及授权
-# RUN usermod -a -G root,sudo abc
-# USER abc

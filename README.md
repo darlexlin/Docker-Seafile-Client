@@ -6,13 +6,13 @@
 
 ## 参数设置
 
-| 参数                | 说明                  |
-| ------------------- | --------------------- |
-| -e PUID=1000        | UserID                |
-| -e PGID=100         | GroupID               |
-| -e TZ=Asia/Shanghai | 默认时区Asia/Shanghai |
-| -v /sf              | 数据文件目录          |
-| -v /app             | 配置文件目录          |
+| 参数                | 说明                                                 |
+| ------------------- | ---------------------------------------------------- |
+| -e PUID             | UserID                                               |
+| -e PGID             | GroupID                                              |
+| -e TZ=Asia/Shanghai | 默认时区Asia/Shanghai                                |
+| -v /sf              | 数据文件目录                                         |
+| -v /app             | 配置文件目录，含ccnet/seafile/seafile-data三个文件夹 |
 
 ## 使用方法
 
