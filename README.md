@@ -6,13 +6,13 @@
 
 ## 参数设置
 
-| 参数                | 说明                            |
-| ------------------- | ------------------------------- |
-| -e PUID=1000        | UserID，默认1000                |
-| -e PGID=100         | GroupID，默认100                |
-| -e TZ=Asia/Shanghai | 默认时区Asia/Shanghai           |
-| -v /seafile-data    | 配置文件目录                    |
-| -v /data            | /data，数据文件目录，可自动生成 |
+| 参数                | 说明                  |
+| ------------------- | --------------------- |
+| -e PUID=1000        | UserID                |
+| -e PGID=100         | GroupID               |
+| -e TZ=Asia/Shanghai | 默认时区Asia/Shanghai |
+| -v /sf              | 数据文件目录          |
+| -v /app             | 配置文件目录          |
 
 ## 使用方法
 

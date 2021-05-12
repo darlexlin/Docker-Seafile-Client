@@ -16,7 +16,10 @@ RUN	apt update -y && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 		apt clean
 
-# 初始化seafile
+# 更改用户
+USER abc
+
+# 初始化
 RUN seaf-cli init -d /app -c /app/ccnet
 
 # 数据目录
@@ -24,6 +27,3 @@ WORKDIR /sf
 
 # 添加本地文件
 COPY root/ /
-
-# 更改用户
-USER abc

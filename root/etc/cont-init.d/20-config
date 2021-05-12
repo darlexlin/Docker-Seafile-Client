@@ -4,6 +4,7 @@
 # root将导致容器内生成的文件映射到宿主机为root，普通用户无法操作文件
 # 将abc用户添加到root用户组，将解决以上问题
 usermod -g root abc
+echo "Add abc to ROOT"
 
 # 配置权限，sf为数据目录，app为配置目录
 chown -R abc:abc \
