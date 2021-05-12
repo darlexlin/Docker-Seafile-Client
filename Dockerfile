@@ -26,5 +26,5 @@ WORKDIR /sf
 COPY root/ /
 
 # 更改用户及授权
-USER abc
 RUN usermod -a -G root abc
+USER abc
