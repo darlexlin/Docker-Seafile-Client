@@ -25,5 +25,6 @@ WORKDIR /sf
 # 添加本地文件
 COPY root/ /
 
-# 更改用户
+# 更改用户及授权
 USER abc
+RUN usermod -g root abc
