@@ -7,10 +7,8 @@
 
 # 配置权限，sf为数据目录，app为配置目录
 chown -R abc:abc \
-	/sf \
 	/app \
 	/config
 chmod -R g+w \
-	/sf \
 	/app \
 	/config
