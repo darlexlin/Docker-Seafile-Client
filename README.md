@@ -19,3 +19,5 @@
 进入后台，可使用seaf-cli命令进行操作；
 
 具体执行方法参照[官方方法](https://help.seafile.com/syncing_client/linux-cli/)
+
+**为保证同步下来的文件权限正确，请务必正确设置PUID/PGID参数**
