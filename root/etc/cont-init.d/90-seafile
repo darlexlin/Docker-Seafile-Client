@@ -9,20 +9,20 @@
     ln -s /app/ccnet /root/.ccnet
 
 # 输出当前时间
-echo "-------------------------------------"
-echo "                                     "
-echo “TIME：$(date)”
-echo "                                     "
-echo "-------------------------------------"
+echo "--------------------------------------"
+echo "                                      "
+echo "Current time:$(date)                  "
+echo "                                      "
+echo "--------------------------------------"
 
 # 使用abc用户启动软件，seafile程序生成的文件权限为abc:abc
 # 如果直接启动，将导致seafile程序生成的文件权限为root:root
 # 如下方式终于可以完美实现docker正常启动、seafile文件权限也正确。
-echo "                                     "
+echo "                                      "
 runuser -u abc -g abc /usr/bin/seaf-cli start
-echo "                                     "
-echo "-------------------------------------"
-echo "                                     "
-echo "seafile started                      "
-echo "                                     "
-echo "-------------------------------------"
+echo "                                      "
+echo "--------------------------------------"
+echo "                                      "
+echo "Seafile started at:$(date)            "
+echo "                                      "
+echo "--------------------------------------"
