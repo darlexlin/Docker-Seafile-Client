@@ -8,9 +8,11 @@
 # 配置权限，sf为数据目录，app为配置目录
 #	此配置全部注释掉，开启此配置会在容器生成后或重启后，均会全部遍历一遍更改文件权限，导致启动或重启很慢
 #	遍历过一次权限后，后续生成的文件不存在权限问题，所以考虑关掉此配置
-chown -R abc:abc \
+chown abc:abc \
+	/sf \
 	/app \
 	/config
-chmod -R g+w \
+chmod g+w \
+	/sf \
 	/app \
 	/config
