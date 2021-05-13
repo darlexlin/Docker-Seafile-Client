@@ -2,11 +2,11 @@
 
 # 映射配置目录
 # 第一条用于容器启动时直接读取ccnet配置
-#[[ $(find /config/.ccnet/ -type f | wc -l) -eq 0 ]] && \
-#    ln -s /app/ccnet /config/.ccnet
+[[ $(find /config/.ccnet/ -type f | wc -l) -eq 0 ]] && \
+    ln -s /app/ccnet /config/.ccnet
 # 第二条用于后台使用时直接查看状态
-#[[ $(find /root/.ccnet/ -type f | wc -l) -eq 0 ]] && \
-#    ln -s /app/ccnet /root/.ccnet
+[[ $(find /root/.ccnet/ -type f | wc -l) -eq 0 ]] && \
+    ln -s /app/ccnet /root/.ccnet
 
 # 输出当前时间
 echo "-------------------------------------"

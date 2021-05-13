@@ -17,11 +17,7 @@ RUN	apt update -y && \
 		apt clean
 
 # 初始化
-RUN seaf-cli init -d /app -c /app/ccnet && \
-		chown abc:abc -R /app && \
-		ln -s /app/ccnet /config/.ccnet && \
-		chown abc:abc -R /config && \
-		ln -s /app/ccnet /root/.ccnet
+RUN seaf-cli init -d /app -c /app/ccnet
 
 # 数据目录
 WORKDIR /sf
